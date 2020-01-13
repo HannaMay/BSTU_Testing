@@ -5,7 +5,18 @@ namespace Lab5.Steps
 {
     public class Steps
     {
-        public IWebDriver driver;
+        // public IWebDriver driver;
+        public IWebDriver driver { get; set; }
+
+        public Steps()
+        {
+            InitBrowser();
+        }
+        
+        ~Steps()
+        {
+            CloseBrowser();
+        }
 
         public void InitBrowser()
         {

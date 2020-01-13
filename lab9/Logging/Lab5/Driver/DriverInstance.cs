@@ -1,10 +1,11 @@
 ﻿using System;
 using OpenQA.Selenium;
-using System;
 using System.Diagnostics;
 using OpenQA.Selenium.Chrome;
 using OpenQA.Selenium.IE;
 using OpenQA.Selenium.Firefox;
+using Lab5.Utils;
+using WebDriverManager;
 using WebDriverManager.DriverConfigs.Impl;
 
 namespace Lab5.Driver
@@ -13,18 +14,32 @@ namespace Lab5.Driver
     {
         
         private static IWebDriver driver;
-
         private DriverInstance() { }
 
         public static IWebDriver GetInstance()
         {
+
             if (driver != null) return driver;
 
-            if (driver == null)
+            var configuration = ConfigurationService.GetIConfigurationRoot();
+            switch (configuration["Browser"])
             {
-                driver = new ChromeDriver();
-                driver.Manage().Window.Maximize();
+                case "chrome":
+                    {
+                        new DriverManager().SetUpDriver(new ChromeConfig());
+                        driver = new ChromeDriver();
+                        break;
+                    }
+
+                default:
+                    {
+                        new DriverManager().SetUpDriver(new ChromeConfig());
+                        driver = new ChromeDriver();
+                        break;
+                    }
             }
+
+            driver.Manage().Window.Maximize();
             return driver;
         }
 

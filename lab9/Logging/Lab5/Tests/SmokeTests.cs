@@ -22,18 +22,6 @@ namespace Lab5.Tests
         private static string ERROR_DATE_TEXT = StringUtils.DataStringErrorDate;
         private static string ERROR_DATE_TEXT_END = StringUtils.DataStringErrorDateEnd;
 
-        [SetUp]
-        public void Init()
-        {
-            steps.InitBrowser();
-        }
-
-        [TearDown]
-        public void Cleanup()
-        {
-            steps.CloseBrowser();
-        }
-
         //Проверка авторизации пользователя
         [Test]
         public void OneCanLoginBooking()

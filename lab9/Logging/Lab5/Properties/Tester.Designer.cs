@@ -88,7 +88,7 @@ namespace Lab5.Properties {
         }
         
         /// <summary>
-        ///   Ищет локализованную строку, похожую на Fri, Dec 27 - Check-out.
+        ///   Ищет локализованную строку, похожую на Fri, Jan 17 - Check-out.
         /// </summary>
         internal static string Tester_ERROR_DATE_TEXT_END {
             get {

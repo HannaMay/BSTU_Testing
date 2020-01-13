@@ -23,7 +23,7 @@ namespace Lab5.Page
         private IWebElement calendar;
 
 
-        [FindsBy(How = How.XPath, Using = "//*[@id='frm']/..//tr[5]/td[1]")]
+        [FindsBy(How = How.XPath, Using = "//*[@id='frm']/..//tr[2]/td[1]")]
         private IWebElement calendarStart;
 
         [FindsBy(How = How.CssSelector, Using = ".bui-calendar__display")]
